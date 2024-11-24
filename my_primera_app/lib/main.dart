@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_primera_app/providers/My_AppState.dart';
+import 'package:my_primera_app/my_app_state.dart';
+import 'package:my_primera_app/my_home_page.dart';
 import 'package:provider/provider.dart';
-
-import 'my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => MyAppstate(),
+      create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'My Primera App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-         ),  
-         home:   MyHomePage(),
+        title: "Mi Primera Aplicación",
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage(),
       ),
     );
   }
 }
-  
+
